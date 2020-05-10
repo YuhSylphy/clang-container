@@ -1,0 +1,21 @@
+version: "3.7"
+
+services:
+  ubuntu:
+    build: ./def/clang
+    image: clang:10.0-1.72-wip5
+    container_name: clang-wip5
+    ports:
+      # - "20080:80"
+      # - "20443:443"
+      - "20022:22"
+      # - "23000:3000"
+      # - "23030:3030"
+      # - "28000:8000"
+      # - "28080:8080"
+    volumes:
+      - ./share:/root/share
+      - ./work:/home/ssh-user/work
+    tty: true
+    environment:
+      - DEBIAN_FRONTEND=noninteractive
